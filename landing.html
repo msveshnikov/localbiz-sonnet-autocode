@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Business Marketing Platform</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6rem 1rem;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .features {
+            padding: 4rem 1rem;
+            background: var(--light);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .pricing {
+            padding: 4rem 1rem;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .price-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.6rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Local Business Marketing Platform</h1>
+        <p>Empower your local business with advanced marketing tools, analytics, and professional templates</p>
+        <a href="#" class="btn">Get Started</a>
+    </header>
+
+    <section class="features">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Marketing Tools</h3>
+                <ul>
+                    <li>Lead Generation Dashboard</li>
+                    <li>Customer Review Management</li>
+                    <li>Local SEO Optimization</li>
+                    <li>Smart Lead Scoring</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h3>Professional Templates</h3>
+                <ul>
+                    <li>Industry-Specific Landing Pages</li>
+                    <li>Email Marketing Templates</li>
+                    <li>Social Media Post Templates</li>
+                    <li>Business Card Designs</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <h3>Analytics & ROI Tracking</h3>
+                <ul>
+                    <li>Campaign Performance Metrics</li>
+                    <li>Cost Per Lead Analysis</li>
+                    <li>Conversion Tracking</li>
+                    <li>ROI Calculator</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <h2 class="section-title">Pricing Plans</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Starter</h3>
+                <p class="price">$49/month</p>
+                <ul>
+                    <li>Basic Marketing Tools</li>
+                    <li>5 Templates</li>
+                    <li>Basic Analytics</li>
+                    <li>Email Support</li>
+                </ul>
+                <a href="#" class="btn">Choose Plan</a>
+            </div>
+            <div class="price-card">
+                <h3>Professional</h3>
+                <p class="price">$99/month</p>
+                <ul>
+                    <li>Advanced Marketing Tools</li>
+                    <li>Unlimited Templates</li>
+                    <li>Full Analytics Suite</li>
+                    <li>Priority Support</li>
+                </ul>
+                <a href="#" class="btn">Choose Plan</a>
+            </div>
+            <div class="price-card">
+                <h3>Enterprise</h3>
+                <p class="price">Custom</p>
+                <ul>
+                    <li>Custom Solutions</li>
+                    <li>API Access</li>
+                    <li>Dedicated Support</li>
+                    <li>Custom Integration</li>
+                </ul>
+                <a href="#" class="btn">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
