@@ -122,38 +122,74 @@ https://localbiz-sonnet-autocode.netlify.app/
 - Industry Benchmarking
 - Marketplace Integration
 
-## Getting Started
+Brand Identity Kit
 
-```bash
-npm install
-npm run dev
-```
+Color Palette
+primary
 
-## Requirements
+#007BFF
+secondary
 
-- Node.js 16+
-- Modern Web Browser
-- Internet Connection
-- NPM or Yarn
-- Git
+#FFC107
+accent
 
-## Development Setup
+#F8F9FA
+#29ABE2
+Typography
+Headings: Poppins
 
-```bash
-git clone [repository-url]
-cd local-business-marketing
-npm install
-npm run dev
-```
+Body: Open Sans
 
-## Contributing
+Accent: Montserrat
 
-1. Fork the repository
-2. Create feature branch
-3. Commit changes
-4. Push to branch
-5. Create Pull Request
+Brand Voice
+Tone:
 
-## License
+Professional, Helpful, Encouraging
 
-MIT License
+Personality:
+
+Reliable Expert, Supportive Partner
+
+Keywords:
+
+Local Service
+Marketing
+ROI
+Growth
+Clients
+Efficiency
+Results
+Platform
+Solutions
+Business
+Success
+Taglines
+Boost Your Local Service. Maximize Your ROI.
+Local Marketing. Real Results.
+Grow Your Local Service Business, Effortlessly.
+Your Partner in Local Service Marketing Success.
+Core Values
+Results-Driven
+Client-Focused
+Expertise
+Support
+Efficiency
+Transparency
+Integrity
+Logo Suggestions
+Abstract representation of upward growth (graph) combined with local reach (horizontal line). Simple and clean.
+
+Colors: #007bff
+
+Maintain aspect ratio. Avoid using on very small sizes.
+A stylized upward-pointing arrow within a circle (representing a local area). Simple, positive and conveys growth.
+
+Colors: #28a745
+
+Maintain aspect ratio. The arrow should remain visible.
+Three stacked squares representing local businesses/clients, connected by a line representing network/platform.
+
+Colors: #ffc107
+
+Maintain aspect ratio and spacing between squares.
