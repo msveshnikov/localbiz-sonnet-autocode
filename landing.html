@@ -1,171 +1,373 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Business Marketing Platform</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --secondary: #1e40af;
-            --dark: #1f2937;
-            --light: #f3f4f6;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-        body {
-            line-height: 1.6;
-        }
-        .header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 6rem 1rem;
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .header p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .features {
-            padding: 4rem 1rem;
-            background: var(--light);
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .pricing {
-            padding: 4rem 1rem;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .price-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
-            text-align: center;
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.6rem;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-top: 1rem;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Local Business Marketing Platform</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <style>
+            :root {
+                --primary: #2563eb;
+                --secondary: #1e40af;
+                --dark: #1f2937;
+                --light: #f3f4f6;
+                --accent: #f59e0b;
             }
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <h1>Local Business Marketing Platform</h1>
-        <p>Empower your local business with advanced marketing tools, analytics, and professional templates</p>
-        <a href="#" class="btn">Get Started</a>
-    </header>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Inter', sans-serif;
+            }
+            body {
+                line-height: 1.6;
+            }
+            .nav {
+                position: fixed;
+                width: 100%;
+                padding: 1rem;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .nav-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .nav-links a {
+                margin-left: 2rem;
+                text-decoration: none;
+                color: var(--dark);
+            }
+            .header {
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                color: white;
+                padding: 8rem 1rem 6rem;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            .header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="%23ffffff20" d="M0 0h200v200H0z"/></svg>');
+                opacity: 0.1;
+            }
+            .header h1 {
+                font-size: 3.5rem;
+                margin-bottom: 1rem;
+                line-height: 1.2;
+            }
+            .header p {
+                font-size: 1.3rem;
+                max-width: 700px;
+                margin: 0 auto 2rem;
+            }
+            .btn {
+                display: inline-block;
+                padding: 1rem 2rem;
+                background: var(--accent);
+                color: white;
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: 600;
+                transition: transform 0.2s;
+            }
+            .btn:hover {
+                transform: translateY(-2px);
+            }
+            .features,
+            .pricing,
+            .testimonials {
+                padding: 6rem 1rem;
+            }
+            .features {
+                background: var(--light);
+            }
+            .features-grid,
+            .pricing-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .feature-card {
+                background: white;
+                padding: 2.5rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s;
+            }
+            .feature-card:hover {
+                transform: translateY(-5px);
+            }
+            .feature-card i {
+                font-size: 2.5rem;
+                color: var(--primary);
+                margin-bottom: 1.5rem;
+            }
+            .price-card {
+                background: white;
+                padding: 3rem 2rem;
+                border-radius: 12px;
+                border: 1px solid #e5e7eb;
+                text-align: center;
+                transition: transform 0.3s;
+            }
+            .price-card:hover {
+                transform: scale(1.02);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            }
+            .price {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: var(--primary);
+                margin: 1rem 0;
+            }
+            .section-title {
+                text-align: center;
+                margin-bottom: 4rem;
+                font-size: 2.5rem;
+                color: var(--dark);
+            }
+            .testimonials-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .testimonial-card {
+                background: white;
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .testimonial-avatar {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                margin-bottom: 1rem;
+            }
+            .stats {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                max-width: 1000px;
+                margin: 3rem auto;
+                text-align: center;
+                color: white;
+            }
+            .stat-item h3 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+            footer {
+                background: var(--dark);
+                color: white;
+                padding: 4rem 1rem;
+                text-align: center;
+            }
+            @media (max-width: 768px) {
+                .header h1 {
+                    font-size: 2.5rem;
+                }
+                .stats {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 2rem;
+                }
+                .nav-links {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="logo.png" alt="Logo" height="40" />
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+            </div>
+        </nav>
 
-    <section class="features">
-        <h2 class="section-title">Key Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>Marketing Tools</h3>
-                <ul>
-                    <li>Lead Generation Dashboard</li>
-                    <li>Customer Review Management</li>
-                    <li>Local SEO Optimization</li>
-                    <li>Smart Lead Scoring</li>
-                </ul>
+        <header class="header">
+            <h1>Transform Your Local Business Marketing</h1>
+            <p>All-in-one platform for lead generation, customer engagement, and business growth</p>
+            <a href="#" class="btn">Start Free Trial</a>
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>5000+</h3>
+                    <p>Active Users</p>
+                </div>
+                <div class="stat-item">
+                    <h3>95%</h3>
+                    <p>Success Rate</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Support</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Templates</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Professional Templates</h3>
-                <ul>
-                    <li>Industry-Specific Landing Pages</li>
-                    <li>Email Marketing Templates</li>
-                    <li>Social Media Post Templates</li>
-                    <li>Business Card Designs</li>
-                </ul>
-            </div>
-            <div class="feature-card">
-                <h3>Analytics & ROI Tracking</h3>
-                <ul>
-                    <li>Campaign Performance Metrics</li>
-                    <li>Cost Per Lead Analysis</li>
-                    <li>Conversion Tracking</li>
-                    <li>ROI Calculator</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        </header>
 
-    <section class="pricing">
-        <h2 class="section-title">Pricing Plans</h2>
-        <div class="pricing-grid">
-            <div class="price-card">
-                <h3>Starter</h3>
-                <p class="price">$49/month</p>
-                <ul>
-                    <li>Basic Marketing Tools</li>
-                    <li>5 Templates</li>
-                    <li>Basic Analytics</li>
-                    <li>Email Support</li>
-                </ul>
-                <a href="#" class="btn">Choose Plan</a>
+        <section class="features" id="features">
+            <h2 class="section-title">Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Advanced Analytics</h3>
+                    <p>
+                        Track performance metrics, analyze customer behavior, and optimize your
+                        marketing strategies in real-time.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Marketing Automation</h3>
+                    <p>
+                        Automate your marketing campaigns, follow-ups, and customer engagement with
+                        smart workflows.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Professional Templates</h3>
+                    <p>
+                        Access industry-specific templates for websites, emails, and social media to
+                        maintain consistent branding.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Lead Management</h3>
+                    <p>
+                        Capture, nurture, and convert leads with our comprehensive lead management
+                        system.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Local SEO Tools</h3>
+                    <p>Optimize your online presence and rank higher in local search results.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Optimized</h3>
+                    <p>
+                        Manage your business on the go with our mobile-friendly platform and apps.
+                    </p>
+                </div>
             </div>
-            <div class="price-card">
-                <h3>Professional</h3>
-                <p class="price">$99/month</p>
-                <ul>
-                    <li>Advanced Marketing Tools</li>
-                    <li>Unlimited Templates</li>
-                    <li>Full Analytics Suite</li>
-                    <li>Priority Support</li>
-                </ul>
-                <a href="#" class="btn">Choose Plan</a>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <img
+                        src="https://randomuser.me/api/portraits/men/1.jpg"
+                        alt="Avatar"
+                        class="testimonial-avatar"
+                    />
+                    <h3>John Smith</h3>
+                    <p>
+                        "This platform has transformed my plumbing business. Lead generation has
+                        increased by 200% since we started using it."
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <img
+                        src="https://randomuser.me/api/portraits/women/1.jpg"
+                        alt="Avatar"
+                        class="testimonial-avatar"
+                    />
+                    <h3>Sarah Johnson</h3>
+                    <p>
+                        "The marketing automation tools have saved us countless hours. Highly
+                        recommended for any local business!"
+                    </p>
+                </div>
+                <div class="testimonial-card">
+                    <img
+                        src="https://randomuser.me/api/portraits/men/2.jpg"
+                        alt="Avatar"
+                        class="testimonial-avatar"
+                    />
+                    <h3>Mike Wilson</h3>
+                    <p>
+                        "Outstanding support team and fantastic features. Our ROI has never been
+                        better."
+                    </p>
+                </div>
             </div>
-            <div class="price-card">
-                <h3>Enterprise</h3>
-                <p class="price">Custom</p>
-                <ul>
-                    <li>Custom Solutions</li>
-                    <li>API Access</li>
-                    <li>Dedicated Support</li>
-                    <li>Custom Integration</li>
-                </ul>
-                <a href="#" class="btn">Contact Sales</a>
+        </section>
+
+        <section class="pricing" id="pricing">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Starter</h3>
+                    <p class="price">$49<span>/month</span></p>
+                    <ul>
+                        <li>Basic Marketing Tools</li>
+                        <li>5 Templates</li>
+                        <li>Basic Analytics</li>
+                        <li>Email Support</li>
+                        <li>1 User Account</li>
+                    </ul>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+                <div class="price-card">
+                    <h3>Professional</h3>
+                    <p class="price">$99<span>/month</span></p>
+                    <ul>
+                        <li>Advanced Marketing Tools</li>
+                        <li>Unlimited Templates</li>
+                        <li>Full Analytics Suite</li>
+                        <li>Priority Support</li>
+                        <li>5 User Accounts</li>
+                    </ul>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <p class="price">Custom</p>
+                    <ul>
+                        <li>Custom Solutions</li>
+                        <li>API Access</li>
+                        <li>Dedicated Support</li>
+                        <li>Custom Integration</li>
+                        <li>Unlimited Users</li>
+                    </ul>
+                    <a href="#" class="btn">Contact Sales</a>
+                </div>
             </div>
-        </div>
-    </section>
-</body>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 MaxSoft. All rights reserved.</p>
+        </footer>
+    </body>
 </html>
