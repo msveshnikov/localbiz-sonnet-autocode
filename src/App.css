@@ -1,13 +1,14 @@
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #4b5563;
-    --success-color: #10b981;
-    --background-light: #ffffff;
-    --background-dark: #1f2937;
+    --primary-color: #007BFF;
+    --secondary-color: #FFC107;
+    --accent-color: #29ABE2;
+    --light-bg: #F8F9FA;
+    --dark-bg: #1f2937;
     --text-light: #374151;
     --text-dark: #f3f4f6;
     --border-color: #e5e7eb;
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --success-color: #28a745;
 }
 
 * {
@@ -17,9 +18,16 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-        sans-serif;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.accent-text {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .app-container {
@@ -28,24 +36,32 @@ body {
 }
 
 .app-container.light {
-    background-color: var(--background-light);
+    background-color: var(--light-bg);
     color: var(--text-light);
 }
 
 .app-container.dark {
-    background-color: var(--background-dark);
+    background-color: var(--dark-bg);
     color: var(--text-dark);
 }
 
 .sidebar {
-    width: 260px;
+    width: 280px;
     padding: 1.5rem;
     border-right: 1px solid var(--border-color);
+    transition: width 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .logo h2 {
-    margin-bottom: 2rem;
     font-size: 1.5rem;
+    color: var(--primary-color);
 }
 
 .nav-items {
@@ -60,11 +76,13 @@ body {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    transition: all 0.2s ease;
 }
 
 .nav-items li:hover {
     background-color: var(--primary-color);
     color: white;
+    transform: translateX(5px);
 }
 
 .nav-items li.active {
@@ -75,6 +93,7 @@ body {
 .main-content {
     flex: 1;
     padding: 2rem;
+    overflow-y: auto;
 }
 
 header {
@@ -82,6 +101,8 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .user-controls {
@@ -96,11 +117,16 @@ header {
     background-color: var(--primary-color);
     color: white;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.user-controls button:hover {
+    transform: scale(1.05);
 }
 
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -108,12 +134,17 @@ header {
 .card {
     padding: 1.5rem;
     border-radius: 0.5rem;
-    background-color: var(--background-light);
+    background-color: var(--light-bg);
     box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .dark .card {
-    background-color: var(--background-dark);
+    background-color: var(--dark-bg);
 }
 
 .stat {
@@ -121,14 +152,23 @@ header {
 }
 
 .number {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     display: block;
+    color: var(--primary-color);
+}
+
+.label {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
 }
 
 .trend {
-    color: var(--secondary-color);
+    color: var(--text-light);
     font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .trend.positive {
@@ -147,12 +187,20 @@ header {
     border: none;
     border-radius: 0.375rem;
     background-color: var(--secondary-color);
-    color: white;
+    color: var(--text-light);
     cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
 }
 
 .action-button.primary {
     background-color: var(--primary-color);
+    color: white;
 }
 
 .analytics-overview {
@@ -164,16 +212,16 @@ header {
 .chart-container {
     padding: 1.5rem;
     border-radius: 0.5rem;
-    background-color: var(--background-light);
+    background-color: var(--light-bg);
     box-shadow: var(--card-shadow);
 }
 
 .dark .chart-container {
-    background-color: var(--background-dark);
+    background-color: var(--dark-bg);
 }
 
 .placeholder-chart {
-    height: 200px;
+    height: 300px;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 0.375rem;
     display: flex;
@@ -187,25 +235,31 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
+    background-color: var(--light-bg);
+}
+
+.dark.login-container {
+    background-color: var(--dark-bg);
 }
 
 .login-form {
     width: 100%;
     max-width: 400px;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    background-color: var(--background-light);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    background-color: white;
     box-shadow: var(--card-shadow);
 }
 
 .dark .login-form {
-    background-color: var(--background-dark);
+    background-color: var(--dark-bg);
 }
 
 .login-form h2 {
     text-align: center;
     margin-bottom: 2rem;
+    color: var(--primary-color);
 }
 
 .login-form input {
@@ -214,6 +268,12 @@ header {
     margin-bottom: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 0.375rem;
+    transition: border-color 0.2s ease;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
 .login-form button {
@@ -225,6 +285,16 @@ header {
     color: white;
     cursor: pointer;
     margin-bottom: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.login-form button:hover {
+    transform: translateY(-2px);
+}
+
+.theme-toggle {
+    background: transparent !important;
+    font-size: 1.25rem;
 }
 
 @media (max-width: 768px) {
@@ -240,5 +310,21 @@ header {
 
     .main-content {
         padding: 1rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions {
+        flex-direction: column;
+    }
+
+    .action-button {
+        width: 100%;
     }
 }
