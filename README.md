@@ -1,0 +1,1 @@
+Marketing for local businesses (such as plumbers, lawyers, electricians, doctors, etc.): This segment is often underserved by large marketing agencies. You can focus on easy-to-use tools and services tailored to the specific needs of these professions. Description: A platform for small business marketing focused on ROI for professions such as plumbers, lawyers, and doctors.
