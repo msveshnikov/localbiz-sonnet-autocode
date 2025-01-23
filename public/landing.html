@@ -5,34 +5,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Local Business Marketing Platform</title>
         <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         />
         <style>
             :root {
-                --primary: #2563eb;
-                --secondary: #1e40af;
-                --dark: #1f2937;
-                --light: #f3f4f6;
-                --accent: #f59e0b;
+                --primary: #007bff;
+                --secondary: #ffc107;
+                --accent: #29abe2;
+                --light: #f8f9fa;
+                --dark: #212529;
             }
             * {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                font-family: 'Inter', sans-serif;
             }
             body {
+                font-family: 'Open Sans', sans-serif;
                 line-height: 1.6;
+                color: var(--dark);
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: 'Poppins', sans-serif;
             }
             .nav {
                 position: fixed;
                 width: 100%;
                 padding: 1rem;
-                background: rgba(255, 255, 255, 0.95);
+                background: rgba(255, 255, 255, 0.98);
                 backdrop-filter: blur(10px);
                 z-index: 1000;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             }
             .nav-content {
                 max-width: 1200px;
@@ -45,79 +58,79 @@
                 margin-left: 2rem;
                 text-decoration: none;
                 color: var(--dark);
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+            .nav-links a:hover {
+                color: var(--primary);
             }
             .header {
-                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                background: linear-gradient(135deg, var(--primary), var(--accent));
                 color: white;
                 padding: 8rem 1rem 6rem;
                 text-align: center;
                 position: relative;
-                overflow: hidden;
-            }
-            .header::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="%23ffffff20" d="M0 0h200v200H0z"/></svg>');
-                opacity: 0.1;
             }
             .header h1 {
                 font-size: 3.5rem;
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
                 line-height: 1.2;
             }
             .header p {
                 font-size: 1.3rem;
-                max-width: 700px;
+                max-width: 800px;
                 margin: 0 auto 2rem;
+                font-family: 'Montserrat', sans-serif;
             }
             .btn {
                 display: inline-block;
-                padding: 1rem 2rem;
-                background: var(--accent);
-                color: white;
+                padding: 1rem 2.5rem;
+                background: var(--secondary);
+                color: var(--dark);
                 text-decoration: none;
-                border-radius: 8px;
+                border-radius: 50px;
                 font-weight: 600;
-                transition: transform 0.2s;
+                transition: all 0.3s;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 0.9rem;
             }
             .btn:hover {
                 transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             }
             .features,
             .pricing,
-            .testimonials {
-                padding: 6rem 1rem;
+            .marketing-tools,
+            .analytics {
+                padding: 6rem 2rem;
             }
             .features {
                 background: var(--light);
             }
-            .features-grid,
-            .pricing-grid {
+            .grid,   .pricing-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 2rem;
                 max-width: 1200px;
                 margin: 0 auto;
             }
-            .feature-card {
+            .card {
                 background: white;
                 padding: 2.5rem;
-                border-radius: 12px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 16px;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
                 transition: transform 0.3s;
             }
-            .feature-card:hover {
+            .card:hover {
                 transform: translateY(-5px);
             }
-            .feature-card i {
+            .card i {
                 font-size: 2.5rem;
                 color: var(--primary);
                 margin-bottom: 1.5rem;
             }
+
             .price-card {
                 background: white;
                 padding: 3rem 2rem;
@@ -161,12 +174,26 @@
                 border-radius: 50%;
                 margin-bottom: 1rem;
             }
+
+            .section-title {
+                text-align: center;
+                margin-bottom: 4rem;
+                font-size: 2.5rem;
+                color: var(--dark);
+            }
+            .section-subtitle {
+                text-align: center;
+                max-width: 700px;
+                margin: -2rem auto 4rem;
+                color: #666;
+                font-family: 'Montserrat', sans-serif;
+            }
             .stats {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 max-width: 1000px;
-                margin: 3rem auto;
-                text-align: center;
+                margin: 4rem auto 0;
+                gap: 2rem;
                 color: white;
             }
             .stat-item h3 {
@@ -176,8 +203,34 @@
             footer {
                 background: var(--dark);
                 color: white;
-                padding: 4rem 1rem;
+                padding: 4rem 2rem;
                 text-align: center;
+            }
+            .footer-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 3rem;
+                text-align: left;
+            }
+            .footer-content h4 {
+                margin-bottom: 1.5rem;
+                font-family: 'Montserrat', sans-serif;
+            }
+            .footer-content ul {
+                list-style: none;
+            }
+            .footer-content ul li {
+                margin-bottom: 0.8rem;
+            }
+            .footer-content ul li a {
+                color: #aaa;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            .footer-content ul li a:hover {
+                color: white;
             }
             @media (max-width: 768px) {
                 .header h1 {
@@ -185,7 +238,6 @@
                 }
                 .stats {
                     grid-template-columns: repeat(2, 1fr);
-                    gap: 2rem;
                 }
                 .nav-links {
                     display: none;
@@ -197,87 +249,82 @@
         <nav class="nav">
             <div class="nav-content">
                 <div class="logo">
-                    <img src="logo.png" alt="Logo" height="40" />
+                    <img src="logo.svg" alt="Local Business Marketing Platform" height="40" />
                 </div>
                 <div class="nav-links">
                     <a href="#features">Features</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#testimonials">Testimonials</a>
+                    <a href="#marketing-tools">Marketing Tools</a>
+                    <a href="#analytics">Analytics</a>
                     <a href="#" class="btn">Get Started</a>
                 </div>
             </div>
         </nav>
 
         <header class="header">
-            <h1>Transform Your Local Business Marketing</h1>
-            <p>All-in-one platform for lead generation, customer engagement, and business growth</p>
+            <h1>Boost Your Local Service. Maximize Your ROI.</h1>
+            <p>
+                The all-in-one marketing platform designed specifically for local service
+                professionals
+            </p>
             <a href="#" class="btn">Start Free Trial</a>
             <div class="stats">
                 <div class="stat-item">
-                    <h3>5000+</h3>
-                    <p>Active Users</p>
+                    <h3>10K+</h3>
+                    <p>Local Businesses</p>
                 </div>
                 <div class="stat-item">
-                    <h3>95%</h3>
-                    <p>Success Rate</p>
+                    <h3>98%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>300%</h3>
+                    <p>Average ROI</p>
                 </div>
                 <div class="stat-item">
                     <h3>24/7</h3>
-                    <p>Support</p>
-                </div>
-                <div class="stat-item">
-                    <h3>50+</h3>
-                    <p>Templates</p>
+                    <p>Expert Support</p>
                 </div>
             </div>
         </header>
 
-        <section class="features" id="features">
-            <h2 class="section-title">Powerful Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Advanced Analytics</h3>
+        <section id="features" class="features">
+            <h2 class="section-title">Powerful Marketing Features</h2>
+            <p class="section-subtitle">Everything you need to grow your local service business</p>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Lead Generation</h3>
                     <p>
-                        Track performance metrics, analyze customer behavior, and optimize your
-                        marketing strategies in real-time.
+                        Capture and convert more qualified leads with our advanced lead generation
+                        tools.
                     </p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>Marketing Automation</h3>
-                    <p>
-                        Automate your marketing campaigns, follow-ups, and customer engagement with
-                        smart workflows.
-                    </p>
+                <div class="card">
+                    <i class="fas fa-star"></i>
+                    <h3>Review Management</h3>
+                    <p>Build trust with automated review collection and management systems.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Professional Templates</h3>
-                    <p>
-                        Access industry-specific templates for websites, emails, and social media to
-                        maintain consistent branding.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Lead Management</h3>
-                    <p>
-                        Capture, nurture, and convert leads with our comprehensive lead management
-                        system.
-                    </p>
-                </div>
-                <div class="feature-card">
+                <div class="card">
                     <i class="fas fa-search"></i>
-                    <h3>Local SEO Tools</h3>
-                    <p>Optimize your online presence and rank higher in local search results.</p>
+                    <h3>Local SEO</h3>
+                    <p>Dominate local search results with our optimized SEO strategies.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile Optimized</h3>
+                <div class="card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Smart Scheduling</h3>
                     <p>
-                        Manage your business on the go with our mobile-friendly platform and apps.
+                        Streamline appointments and bookings with our intelligent scheduling system.
                     </p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>ROI Tracking</h3>
+                    <p>Monitor and optimize your marketing performance in real-time.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Service Area Mapping</h3>
+                    <p>Define and optimize your service coverage area for maximum efficiency.</p>
                 </div>
             </div>
         </section>
@@ -331,43 +378,82 @@
                     <h3>Starter</h3>
                     <p class="price">$49<span>/month</span></p>
                     <ul>
-                        <li>Basic Marketing Tools</li>
-                        <li>5 Templates</li>
-                        <li>Basic Analytics</li>
-                        <li>Email Support</li>
-                        <li>1 User Account</li>
+                        <p>Basic Marketing Tools</p>
+                        <p>5 Templates</p>
+                        <p>Basic Analytics</p>
+                        <p>Email Support</p>
+                        <p>1 User Account</p>
                     </ul>
+                    <br/>
                     <a href="#" class="btn">Get Started</a>
                 </div>
                 <div class="price-card">
                     <h3>Professional</h3>
                     <p class="price">$99<span>/month</span></p>
                     <ul>
-                        <li>Advanced Marketing Tools</li>
-                        <li>Unlimited Templates</li>
-                        <li>Full Analytics Suite</li>
-                        <li>Priority Support</li>
-                        <li>5 User Accounts</li>
+                        <p>Advanced Marketing Tools</p>
+                        <p>Unlimited Templates</p>
+                        <p>Full Analytics Suite</p>
+                        <p>Priority Support</p>
+                        <p>5 User Accounts</p>
                     </ul>
+                    <br/>
                     <a href="#" class="btn">Get Started</a>
                 </div>
                 <div class="price-card">
                     <h3>Enterprise</h3>
                     <p class="price">Custom</p>
                     <ul>
-                        <li>Custom Solutions</li>
-                        <li>API Access</li>
-                        <li>Dedicated Support</li>
-                        <li>Custom Integration</li>
-                        <li>Unlimited Users</li>
+                        <p>Custom Solutions</p>
+                        <p>API Access</p>
+                        <p>Dedicated Support</p>
+                        <p>Custom Integration</p>
+                        <p>Unlimited Users</p>
                     </ul>
+                    <br/>
                     <a href="#" class="btn">Contact Sales</a>
                 </div>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2025 MaxSoft. All rights reserved.</p>
+            <div class="footer-content">
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 3rem">
+                &copy; 2024 Local Business Marketing Platform. All rights reserved.
+            </p>
         </footer>
     </body>
 </html>
