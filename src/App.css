@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #007BFF;
-    --secondary-color: #FFC107;
-    --accent-color: #29ABE2;
-    --light-bg: #F8F9FA;
+    --primary-color: #007bff;
+    --secondary-color: #ffc107;
+    --accent-color: #29abe2;
+    --light-bg: #f8f9fa;
     --dark-bg: #1f2937;
     --text-light: #374151;
     --text-dark: #f3f4f6;
@@ -18,11 +18,20 @@
 }
 
 body {
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family:
+        'Open Sans',
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
     line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Poppins', sans-serif;
 }
 
