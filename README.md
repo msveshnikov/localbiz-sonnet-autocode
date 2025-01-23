@@ -4,6 +4,8 @@ A specialized marketing platform designed to help local service professionals ef
 their businesses and maximize ROI. Built for plumbers, lawyers, electricians, doctors, and other
 local service providers.
 
+![alt text](public/image.webp)
+
 # DEMO
 
 https://localbiz-sonnet-autocode.netlify.app/
